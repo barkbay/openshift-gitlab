@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eu
+
+source "${CONTAINER_SCRIPTS_PATH}/common.sh"
+
+#check_env_vars
+#generate_passwd_file
+generate_gitlab_config
+
+#unset_env_vars
+exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
