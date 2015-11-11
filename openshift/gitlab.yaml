@@ -29,17 +29,17 @@ objects:
     type: ClusterIP
   status:
     loadBalancer: {}
- - apiVersion: v1
-   kind: Route
-   metadata:
-     name: ${GITLAB_SERVICE_NAME}
-   spec:
-     host: ${GITLAB_EXTERNAL_URL}
-     to:
-       kind: Service
-       name: ${GITLAB_SERVICE_NAME}
-     selector:
-       name: ${GITLAB_SERVICE_NAME}
+- apiVersion: v1
+  kind: Route
+  metadata:
+    name: ${GITLAB_SERVICE_NAME}
+  spec:
+    host: ${GITLAB_EXTERNAL_URL}
+    to:
+      kind: Service
+      name: ${GITLAB_SERVICE_NAME}
+    selector:
+      name: ${GITLAB_SERVICE_NAME}
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
